@@ -48,12 +48,13 @@ export function ProductShowcase() {
 
           {/* páginas internas */}
           <div className="mt-8 flex justify-center gap-4">
-            {[GALLERY[0], GALLERY[5]].map((page, i) => (
+            {[
+              { ...GALLERY[0]!, rot: "-rotate-3" },
+              { ...GALLERY[5]!, rot: "rotate-2" },
+            ].map((page) => (
               <div
                 key={page.name}
-                className={`card-lift w-36 rounded-3xl bg-card p-2.5 shadow-card ${
-                  i === 0 ? "-rotate-3" : "rotate-2"
-                }`}
+                className={`card-lift w-36 rounded-3xl bg-card p-2.5 shadow-card ${page.rot}`}
               >
                 <img
                   src={page.image}

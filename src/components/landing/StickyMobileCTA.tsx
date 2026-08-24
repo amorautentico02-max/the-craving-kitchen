@@ -20,21 +20,27 @@ export function StickyMobileCTA() {
     const update = () => setVisible(pastHero && !onOffer && !onFinal);
 
     const heroObs = new IntersectionObserver(
-      ([e]) => {
+      (entries) => {
+        const e = entries[0];
+        if (!e) return;
         pastHero = !e.isIntersecting && e.boundingClientRect.top < 0;
         update();
       },
       { threshold: 0 },
     );
     const ofertaObs = new IntersectionObserver(
-      ([e]) => {
+      (entries) => {
+        const e = entries[0];
+        if (!e) return;
         onOffer = e.isIntersecting;
         update();
       },
       { threshold: 0.1 },
     );
     const finalObs = new IntersectionObserver(
-      ([e]) => {
+      (entries) => {
+        const e = entries[0];
+        if (!e) return;
         onFinal = e.isIntersecting;
         update();
       },
