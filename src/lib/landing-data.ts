@@ -38,6 +38,11 @@ export const PRICE = {
   ctaUrl: "#oferta", // troque pelo link de checkout quando publicar
 };
 
+export const PRO = {
+  old: "97,00",
+  price: "19,90",
+};
+
 // ---------- Categorias de vontade ----------
 export const CATEGORIES = [
   {
