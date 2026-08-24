@@ -29,8 +29,8 @@ export function Hero() {
           <Reveal delay={100}>
             <h1 className="mt-5 text-4xl leading-[1.05] font-extrabold text-balance sm:text-5xl lg:text-[3.4rem]">
               Mate a vontade de{" "}
-              <span className="hl text-coral">pizza</span>,{" "}
-              <span className="hl text-coral">hambúrguer</span>,{" "}
+              <span className="hl text-coral">pizza,</span>{" "}
+              <span className="hl text-coral">hambúrguer,</span>{" "}
               <span className="hl text-coral">salgado</span> e{" "}
               <span className="hl text-coral">doce</span> sem viver de comida
               sem graça.
