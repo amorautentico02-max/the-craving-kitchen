@@ -33,7 +33,7 @@ export function FoodGallery() {
                     loading="lazy"
                     className="img-zoom w-full object-cover"
                   />
-                  <span className="absolute top-3 left-3 rounded-full bg-grad-brand px-3 py-1 font-display text-[11px] font-bold tracking-wide text-primary-foreground shadow-card">
+                  <span className="absolute top-3 left-3 max-w-[calc(100%-1.5rem)] rounded-xl bg-grad-brand px-2.5 py-1 text-center font-display text-[10px] leading-tight font-bold tracking-wide text-primary-foreground shadow-card">
                     {item.tag}
                   </span>
                   <figcaption className="absolute inset-x-3 bottom-3 rounded-2xl bg-choco/80 px-4 py-2.5 font-display text-sm font-bold text-cream backdrop-blur-sm">
