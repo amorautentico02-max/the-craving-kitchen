@@ -244,3 +244,17 @@ export const OFFER_CHECKLIST = [
   "Atualizações incluídas",
   "14 dias de garantia",
 ];
+
+// ---------- Social proof ----------
+export const SOCIAL_PROOF_PEOPLE = [
+  { name: "Maria", city: "São Paulo" },
+  { name: "Ana", city: "Rio de Janeiro" },
+  { name: "Juliana", city: "Belo Horizonte" },
+  { name: "Fernanda", city: "Curitiba" },
+  { name: "Camila", city: "Brasília" },
+  { name: "Patrícia", city: "Salvador" },
+  { name: "Larissa", city: "Fortaleza" },
+  { name: "Beatriz", city: "Porto Alegre" },
+  { name: "Carolina", city: "Recife" },
+  { name: "Amanda", city: "Goiânia" },
+];

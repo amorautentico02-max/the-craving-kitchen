@@ -104,6 +104,7 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 3.5rem;
   }
 
   body {
@@ -119,6 +120,11 @@
   h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background-color: oklch(0.899 0.052 58 / 50%); /* peach 50% */
+    color: var(--brand-choco);
   }
 }
 
@@ -266,6 +272,142 @@
   transform: scale(1.03);
 }
 
+/* ---------- Shimmer CTA ---------- */
+
+@keyframes shimmer-slide {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.btn-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    oklch(1 0 0 / 22%) 50%,
+    transparent 60%
+  );
+  animation: shimmer-slide 3.5s ease-in-out infinite;
+  animation-delay: 1.5s;
+  pointer-events: none;
+}
+
+/* ---------- Preço riscado animado ---------- */
+
+@keyframes strike-draw {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.strike-animated {
+  position: relative;
+  text-decoration: none;
+}
+
+.strike-animated::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  top: 50%;
+  height: 2px;
+  background: var(--color-coral);
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.reveal-visible .strike-animated::after {
+  animation: strike-draw 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+}
+
+/* ---------- Gradient border rotativo (Pricing) ---------- */
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes border-spin {
+  to { --border-angle: 360deg; }
+}
+
+.gradient-border-spin {
+  background: conic-gradient(from var(--border-angle), #ff7424, #e9472b, #f5b83b, #ff7424) border-box;
+  animation: border-spin 4s linear infinite;
+}
+
+/* ---------- Social proof toast ---------- */
+
+@keyframes toast-in {
+  from {
+    transform: translateX(-110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toast-out {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-110%);
+    opacity: 0;
+  }
+}
+
+.toast-enter {
+  animation: toast-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.toast-exit {
+  animation: toast-out 0.35s ease-in forwards;
+}
+
+/* ---------- Testimonial fade ---------- */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimonial-fade-enter {
+  animation: fade-in-up 0.5s ease forwards;
+}
+
+/* ---------- Badge pulse ---------- */
+
+@keyframes badge-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.badge-pulse {
+  animation: badge-pulse 2s ease-in-out infinite;
+}
+
 /* ---------- Reduced motion ---------- */
 
 @media (prefers-reduced-motion: reduce) {
@@ -293,5 +435,34 @@
   .btn-cta,
   .card-lift {
     transition: none;
+  }
+
+  .btn-cta::before {
+    animation: none;
+    display: none;
+  }
+
+  .strike-animated::after {
+    transform: scaleX(1);
+    animation: none;
+  }
+
+  .gradient-border-spin {
+    animation: none;
+  }
+
+  .toast-enter,
+  .toast-exit {
+    animation: none;
+  }
+
+  .badge-pulse {
+    animation: none;
+  }
+
+  .testimonial-fade-enter {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }

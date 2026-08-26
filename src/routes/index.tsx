@@ -16,6 +16,7 @@ import { Guarantee } from "@/components/landing/Guarantee";
 import { Faq } from "@/components/landing/Faq";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { StickyMobileCTA } from "@/components/landing/StickyMobileCTA";
+import { SocialProofToast } from "@/components/landing/SocialProofToast";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -62,6 +63,7 @@ function Index() {
       <Faq />
       <FinalCTA />
       <StickyMobileCTA />
+      <SocialProofToast />
     </main>
   );
 }

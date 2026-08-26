@@ -5,6 +5,21 @@ import { CtaButton } from "./CtaButton";
 export function ChocolateSection() {
   return (
     <section className="relative overflow-hidden bg-choco py-16 text-cream sm:py-24">
+      {/* SVG chocolate drip */}
+      <div className="absolute -top-1 left-0 right-0 overflow-hidden" aria-hidden>
+        <svg
+          viewBox="0 0 1440 50"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 0h1440v20c-120 0-180 30-240 30s-120-30-240-30-180 30-240 30-120-25-240-25-180 25-240 25S120 20 0 20V0z"
+            fill="var(--brand-choco)"
+          />
+        </svg>
+      </div>
       {/* brilhos decorativos */}
       <div
         aria-hidden
