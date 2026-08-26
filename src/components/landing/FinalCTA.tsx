@@ -49,7 +49,7 @@ export function FinalCTA() {
         <Reveal delay={150}>
           <a
             href={PRICE.ctaUrl}
-            className="mt-9 inline-flex items-center justify-center rounded-full bg-card px-10 py-4.5 font-display text-lg font-extrabold text-grad-brand shadow-[0_20px_45px_-15px_oklch(0_0_0/45%)] transition-transform duration-300 hover:scale-105 active:scale-95"
+            className="mt-9 inline-flex items-center justify-center rounded-full bg-white px-10 py-5 font-display text-lg font-extrabold text-choco shadow-[0_20px_45px_-10px_rgba(0,0,0,0.35)] transition-all duration-300 hover:scale-105 hover:bg-cream active:scale-95 sm:text-xl"
           >
             QUERO O MATA VONTADE
           </a>
